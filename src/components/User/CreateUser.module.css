@@ -1,0 +1,9 @@
+.createForm {
+  width: 90%;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgb(116, 106, 216);
+  max-width: 20rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 26%);
+}

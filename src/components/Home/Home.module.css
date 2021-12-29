@@ -1,0 +1,8 @@
+.home {
+  text-align: center;
+  width: 90%;
+  margin: auto;
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

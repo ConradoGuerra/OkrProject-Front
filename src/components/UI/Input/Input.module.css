@@ -1,0 +1,38 @@
+.control {
+  margin: 1rem 0;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.control label,
+.control input {
+  display: block;
+}
+
+.control label {
+  font-weight: bold;
+  flex: 1;
+  color: rgb(255, 255, 255);
+}
+
+.control input {
+  flex: 3;
+  padding: 0.35rem 0.35rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 2px;
+}
+
+.control input:focus {
+  outline: none;
+  border-color: #050f7e;
+  background: #f6dbfc;
+}
+
+@media (min-width: 768px) {
+  .control {
+    align-items: center;
+    flex-direction: row;
+  }
+}

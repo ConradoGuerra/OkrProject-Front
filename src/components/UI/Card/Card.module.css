@@ -1,0 +1,56 @@
+.card {
+  width: 90%;
+  margin: 1rem 1rem;
+  padding: 1rem;
+  background: rgb(116, 106, 216);
+  max-width: 20rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 26%);
+}
+
+.userName {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin: 0px;
+  padding: 0px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+li {
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-radius: 5px;
+  color: rgb(116, 106, 216);
+  background: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7);
+  padding: 20px;
+}
+
+.progressBar {
+  height: 100%;
+  width: 100%;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.progressBar__fill {
+  background-color: #26b943;
+  width: 100%;
+  transition: all 0.3s ease-out;
+  border-radius: 10px;
+  color: rgba(74, 72, 72, 0.428);
+
+}

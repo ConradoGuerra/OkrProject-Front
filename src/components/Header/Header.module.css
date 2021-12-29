@@ -1,0 +1,32 @@
+.main-header{
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 0.9rem 2rem;
+  background: rgb(116, 106, 216);
+  color: whitesmoke;
+  position: fixed;
+  display: inline-flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.main-header div {
+  display: flex;
+}
+
+.headerButton {
+  background: rgb(116, 106, 216);
+  color: whitesmoke;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.15rem;
+  padding: 0.3rem 0.75rem;
+}
+
+.headerButton:active,
+.headerButton:hover {
+  color: rgb(12, 28, 78);
+  border-color: black;
+}
