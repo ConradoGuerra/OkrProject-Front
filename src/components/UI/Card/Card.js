@@ -1,15 +1,14 @@
 import classes from "./Card.module.css";
 
 const Card = (props) => {
-  const okrList = props.usersData.Objetivos.map((okr) => {
-    let proportion = ((okr.Realizado / okr.Meta)*100).toFixed(2) ;
+  const okrList = props.usersData.okr.map((okr) => {
+    let proportion = ((okr.done / okr.planned)*100).toFixed(2) ;
     proportion > 100 ? proportion = 100+'%' : proportion= proportion+'%'
-    console.log(proportion);
     return (
-      <li>
-        <span>{okr.Nome}</span>
+      <li key={okr.okrName+okr._id}>
+        <span>{okr.okrName}</span>
         <span>
-        {okr.Realizado}/{okr.Meta}
+        {okr.done}/{okr.planned}
         </span>
         <div className={classes.progressBar}>
           <div
@@ -24,8 +23,8 @@ const Card = (props) => {
   return (
     <div className={classes.card}>
       <div className={classes.userName}>
-        <h3>{props.usersData.Nome}</h3>
-        <span>{props.usersData.Email}</span>
+        <h3>{props.usersData.name}</h3>
+        <span>{props.usersData.email}</span>
       </div>
       <ul>{okrList}</ul>
     </div>

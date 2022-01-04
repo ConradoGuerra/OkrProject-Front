@@ -1,81 +1,33 @@
-import CreateUser from "./CreateUser";
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import classes from "./User.module.css";
 import Card from "../UI/Card/Card";
 
 const User = () => {
-  const [createUserButton, setCreateUserButton] = useState(false);
+  const [users, setUsers] = useState([]);
 
-  const users = [
-    {
-      Nome: "Conrado Guerra",
-      Id: 1,
-      Email: "concon@gmai.com",
-      Objetivos: [
-        { Nome: "Trabalhar", Meta: 43, Realizado: 6 },
-        { Nome: "Estudar", Meta: 52, Realizado: 76 },
-        { Nome: "Dormir", Meta: 100, Realizado: 2 },
-        { Nome: "Cozinhar", Meta: 87, Realizado: 38 },
-      ],
-    },
-    {
-      Nome: "Lili",
-      Id: 2,
-      Email: "lililillili",
-      Objetivos: [
-        { Nome: "Trabalhar", Meta: 43, Realizado: 43 },
-        { Nome: "Estudar", Meta: 52, Realizado: 24 },
-        { Nome: "Dormir", Meta: 100, Realizado: 80 },
-        { Nome: "Cozinhar", Meta: 87, Realizado: 54 },
-      ],
-    },
-    {
-      Nome: "Lili",
-      Id: 2,
-      Email: "lililillili",
-      Objetivos: [
-        { Nome: "Trabalhar", Meta: 43, Realizado: 43 },
-        { Nome: "Estudar", Meta: 52, Realizado: 24 },
-        { Nome: "Dormir", Meta: 100, Realizado: 80 },
-        { Nome: "Cozinhar", Meta: 87, Realizado: 54 },
-      ],
-    },
-    {
-      Nome: "Lili",
-      Id: 2,
-      Email: "lililillili",
-      Objetivos: [
-        { Nome: "Trabalhar", Meta: 43, Realizado: 43 },
-        { Nome: "Estudar", Meta: 52, Realizado: 24 },
-        { Nome: "Dormir", Meta: 100, Realizado: 80 },
-        { Nome: "Cozinhar", Meta: 87, Realizado: 54 },
-      ],
-    },
-    {
-      Nome: "Lili",
-      Id: 2,
-      Email: "lililillili",
-      Objetivos: [
-        { Nome: "Trabalhar", Meta: 43, Realizado: 43 },
-        { Nome: "Estudar", Meta: 52, Realizado: 24 },
-        { Nome: "Dormir", Meta: 100, Realizado: 80 },
-        { Nome: "Cozinhar", Meta: 87, Realizado: 54 },
-      ],
-    },
-    {
-      Nome: "Lili",
-      Id: 2,
-      Email: "lililillili",
-      Objetivos: [
-        { Nome: "Trabalhar", Meta: 43, Realizado: 43 },
-        { Nome: "Estudar", Meta: 52, Realizado: 24 },
-        { Nome: "Dormir", Meta: 100, Realizado: 80 },
-        { Nome: "Cozinhar", Meta: 87, Realizado: 54 },
-      ],
-    },
-  ];
+  const fetchUsers = useCallback(() => {
+    fetch("http://localhost:8080")
+      .then((result) => result.json())
+      .then((resultData) => {
+        const usersData = resultData.data.map((user) => {
+          return {
+            id: user._id,
+            email: user.email,
+            name: user.name,
+            okr: user.okrs,
+          };
+        });
 
-  const userContent = users.map((user) => <Card key={user.Id} usersData={user} />);
+        setUsers(usersData);
+      }).catch(err => console.log(err));
+  }, []);
+  
+
+  useEffect(fetchUsers, [fetchUsers])
+
+  const userContent = users.map((user) => (
+    <Card key={user.id} usersData={user} />
+  ));
 
   return userContent;
 };

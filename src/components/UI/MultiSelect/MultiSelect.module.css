@@ -1,0 +1,60 @@
+.multi-wrapper {
+  display: flex;
+  min-height: 38px;
+  flex-wrap: wrap;
+}
+
+.multi-header {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 90%;
+  background-color: white;
+  border-radius: 10px;
+  padding: 0px 15px;
+  margin: 10px 0px;
+  border: 1px solid #ccc;
+}
+.multi-header__title--bold {
+  font-weight: bold;
+}
+
+.multi-ul {
+  position: fixed;
+  margin: 4rem 1rem;
+  width: 20%;
+}
+
+.multi-li {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  margin-top: 2px;
+  border-radius: 10px;
+}
+
+.multi-button {
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  background-color: whitesmoke;
+  font-size: 16px;
+  padding: 15px 20px 15px 20px;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  text-align: left;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  
+}
+.multi-button.selected{
+  background-color: black!important;
+}
+.multi-button:hover,
+.multi-button:focus {
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 10px;
+}

@@ -49,7 +49,7 @@ li {
 .progressBar__fill {
   background-color: #26b943;
   width: 100%;
-  transition: all 0.3s ease-out;
+  transition: 0.3s;
   border-radius: 10px;
   color: rgba(74, 72, 72, 0.428);
 
