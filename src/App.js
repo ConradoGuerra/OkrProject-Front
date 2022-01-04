@@ -1,9 +1,9 @@
 import "./App.css";
-import Home from "./components/Home/Home";
 import Header from "./components/Header/Header";
 import { useState, Fragment } from "react";
 import CreateUser from './components/User/CreateUser'
 import CreateOkr from './components/Okr/CreateOkr'
+import User from "./components/User/User";
 
 function App() {
 
@@ -27,7 +27,7 @@ function App() {
         <section>
           {newUserButton && !newOkrButton && <CreateUser createUser={setnewUserButton}/>}  
           {newOkrButton && !newUserButton && <CreateOkr createOkr={setnewOkrButton}/>}  
-          {!newUserButton && !newOkrButton && <Home/>}
+          {!newUserButton && !newOkrButton && <User/>}
         </section>
       </main>
     </Fragment>

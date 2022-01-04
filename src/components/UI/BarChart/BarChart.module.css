@@ -1,0 +1,20 @@
+
+.progressBar {
+    height: 100%;
+    width: 100%;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  .progressBar__fill {
+    background-color: #26b943;
+    width: 100%;
+    transition: all 0.3s ease-out;
+    border-radius: 10px;
+    color: rgba(74, 72, 72, 0.428);
+  }
+  

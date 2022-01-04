@@ -6,6 +6,10 @@
   max-width: 20rem;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgb(0 0 0 / 26%);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .userName {
@@ -28,7 +32,7 @@ ul {
 li {
   margin: 0.5rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
   border-radius: 5px;
@@ -36,21 +40,21 @@ li {
   background: white;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7);
   padding: 20px;
+  margin: .50rem auto;
 }
 
-.progressBar {
-  height: 100%;
-  width: 100%;
-  background-color: whitesmoke;
-  border-radius: 10px;
-  text-align: center;
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.50rem;
 }
 
-.progressBar__fill {
-  background-color: #26b943;
-  width: 100%;
-  transition: 0.3s;
-  border-radius: 10px;
-  color: rgba(74, 72, 72, 0.428);
-
+.button {
+  flex: 1 1 100%;
+  display: flex;
+  justify-content: end;
+  margin: 0.50rem auto;
 }
